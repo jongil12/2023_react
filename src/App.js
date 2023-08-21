@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Hello from "./component/Hello";
+import Welcome from "./component/Welcome";
+
+
 
 function App() {
+  // 변수
+  const name = "Hong";
+  let age = 30;
+  // 객체
+  const naver ={
+    name : "네이버",
+    url : "https://www.naver.com",
+    target : "_blank"
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* 컴포넌트 */}
+    <Hello />
+    <Welcome />
+
+    {/* {변수, 숫자, 문자열} 사용가능 */}
+    <h1>{'이름 : '}{name} ,{'나이 : '}{age}</h1>
+    <h1>이름 : {name} ,나이 : {age}</h1>
+    {/* 객체 {객체이름.속성} */}
+    <h2><a href={naver.url} target={naver.target}>{naver.name}</a></h2>
     </div>
   );
 }
